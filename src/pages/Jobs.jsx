@@ -168,7 +168,7 @@ const Jobs = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-7">
+                <div className="col-md-7 gap-5">
                   <div className="mobile_device d-none">
                     <select
                       className="form-control mb-3"
@@ -195,16 +195,14 @@ const Jobs = () => {
                       ))}
                     </select>
                   </div>
-                  <div className="">
+                  <div className="d-flex gap-5">
                     <div className="jobs_container">
                       {jobs &&
                         jobs.map((element) => {
                           return (
-                            <div className="card p-3" key={element._id}>
+                            <div className="card p-3 mb-3" key={element._id}>
                               {element.hiringMultipleCandidates === "Yes" ? (
-                                <p className="hiring-multiple">
-                                  Hiring Multiple Candidates
-                                </p>
+                                <p className="">Hiring Multiple Candidates</p>
                               ) : (
                                 <p
                                   style={{
@@ -217,7 +215,9 @@ const Jobs = () => {
                                   Hiring
                                 </p>
                               )}
-                              <p className="fs-2 mb-0">{element.title}</p>
+                              <p className="fs-2 mb-0 fw-bold">
+                                {element.title}
+                              </p>
                               <p className="fs-5 mb-0">{element.companyName}</p>
                               <p className="location mb-0">
                                 Location : {element.location}
